@@ -2,6 +2,19 @@
 {
     public class Calc
     {
+        public static double Result;
+
+        public static double ClearResult()
+        {
+            return Result = 0;
+        }
+
+        public static double ReturnResult()
+        {
+            
+            return Result;
+        }
+
         public static double Addition(double value1, double value2)
         {
             return value1 + value2;

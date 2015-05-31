@@ -62,11 +62,19 @@ namespace CalcTest2
             Assert.AreEqual(3, Calc.SquareRoot(9));
         }
 
+
         [TestMethod]
         public void ChangeSign()
         {
             Assert.AreEqual(3, Calc.ChangeSign(-3));
             Assert.AreEqual(-8, Calc.ChangeSign(8));
+        }
+
+        [TestMethod]
+        public void ClearResult()
+        {
+            Calc.Result = 67;
+            Assert.AreEqual(0, Calc.ClearResult());
         }
     }
 }
