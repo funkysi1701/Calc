@@ -49,5 +49,24 @@ namespace CalcTest2
             //Assert.AreEqual(12/23, Calc.Divide(12, 23), "Doesn't Add Up");
             Assert.AreEqual(2.2/3.7, Calc.Divide(2.2, 3.7), "Doesn't Add Up");
         }
+
+        [TestMethod]
+        public void Square()
+        {
+            Assert.AreEqual(9, Calc.Square(3));
+        }
+
+        [TestMethod]
+        public void SquareRoot()
+        {
+            Assert.AreEqual(3, Calc.SquareRoot(9));
+        }
+
+        [TestMethod]
+        public void ChangeSign()
+        {
+            Assert.AreEqual(3, Calc.ChangeSign(-3));
+            Assert.AreEqual(-8, Calc.ChangeSign(8));
+        }
     }
 }
