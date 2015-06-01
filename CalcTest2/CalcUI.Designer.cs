@@ -44,19 +44,21 @@
             this.Multiply = new System.Windows.Forms.Button();
             this.Minus = new System.Windows.Forms.Button();
             this.Plus = new System.Windows.Forms.Button();
-            this.Equals = new System.Windows.Forms.Button();
+            this.EqualsBtn = new System.Windows.Forms.Button();
+            this.Divide = new System.Windows.Forms.Button();
+            this.Clear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Result
             // 
             this.Result.Location = new System.Drawing.Point(12, 12);
             this.Result.Name = "Result";
-            this.Result.Size = new System.Drawing.Size(260, 20);
+            this.Result.Size = new System.Drawing.Size(179, 20);
             this.Result.TabIndex = 0;
             // 
             // Zero
             // 
-            this.Zero.Location = new System.Drawing.Point(12, 217);
+            this.Zero.Location = new System.Drawing.Point(17, 190);
             this.Zero.Name = "Zero";
             this.Zero.Size = new System.Drawing.Size(39, 32);
             this.Zero.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             // SignChange
             // 
-            this.SignChange.Location = new System.Drawing.Point(102, 217);
+            this.SignChange.Location = new System.Drawing.Point(107, 190);
             this.SignChange.Name = "SignChange";
             this.SignChange.Size = new System.Drawing.Size(39, 32);
             this.SignChange.TabIndex = 2;
@@ -75,7 +77,7 @@
             // 
             // Point
             // 
-            this.Point.Location = new System.Drawing.Point(57, 217);
+            this.Point.Location = new System.Drawing.Point(62, 190);
             this.Point.Name = "Point";
             this.Point.Size = new System.Drawing.Size(39, 32);
             this.Point.TabIndex = 3;
@@ -84,7 +86,7 @@
             // 
             // Two
             // 
-            this.Two.Location = new System.Drawing.Point(57, 179);
+            this.Two.Location = new System.Drawing.Point(62, 152);
             this.Two.Name = "Two";
             this.Two.Size = new System.Drawing.Size(39, 32);
             this.Two.TabIndex = 6;
@@ -94,7 +96,7 @@
             // 
             // Three
             // 
-            this.Three.Location = new System.Drawing.Point(102, 179);
+            this.Three.Location = new System.Drawing.Point(107, 152);
             this.Three.Name = "Three";
             this.Three.Size = new System.Drawing.Size(39, 32);
             this.Three.TabIndex = 5;
@@ -104,7 +106,7 @@
             // 
             // One
             // 
-            this.One.Location = new System.Drawing.Point(12, 179);
+            this.One.Location = new System.Drawing.Point(17, 152);
             this.One.Name = "One";
             this.One.Size = new System.Drawing.Size(39, 32);
             this.One.TabIndex = 4;
@@ -114,7 +116,7 @@
             // 
             // Eight
             // 
-            this.Eight.Location = new System.Drawing.Point(57, 103);
+            this.Eight.Location = new System.Drawing.Point(62, 76);
             this.Eight.Name = "Eight";
             this.Eight.Size = new System.Drawing.Size(39, 32);
             this.Eight.TabIndex = 12;
@@ -124,7 +126,7 @@
             // 
             // Nine
             // 
-            this.Nine.Location = new System.Drawing.Point(102, 103);
+            this.Nine.Location = new System.Drawing.Point(107, 76);
             this.Nine.Name = "Nine";
             this.Nine.Size = new System.Drawing.Size(39, 32);
             this.Nine.TabIndex = 11;
@@ -134,7 +136,7 @@
             // 
             // Seven
             // 
-            this.Seven.Location = new System.Drawing.Point(12, 103);
+            this.Seven.Location = new System.Drawing.Point(17, 76);
             this.Seven.Name = "Seven";
             this.Seven.Size = new System.Drawing.Size(39, 32);
             this.Seven.TabIndex = 10;
@@ -144,7 +146,7 @@
             // 
             // Five
             // 
-            this.Five.Location = new System.Drawing.Point(57, 141);
+            this.Five.Location = new System.Drawing.Point(62, 114);
             this.Five.Name = "Five";
             this.Five.Size = new System.Drawing.Size(39, 32);
             this.Five.TabIndex = 9;
@@ -154,7 +156,7 @@
             // 
             // Six
             // 
-            this.Six.Location = new System.Drawing.Point(102, 141);
+            this.Six.Location = new System.Drawing.Point(107, 114);
             this.Six.Name = "Six";
             this.Six.Size = new System.Drawing.Size(39, 32);
             this.Six.TabIndex = 8;
@@ -164,7 +166,7 @@
             // 
             // Four
             // 
-            this.Four.Location = new System.Drawing.Point(12, 141);
+            this.Four.Location = new System.Drawing.Point(17, 114);
             this.Four.Name = "Four";
             this.Four.Size = new System.Drawing.Size(39, 32);
             this.Four.TabIndex = 7;
@@ -174,7 +176,7 @@
             // 
             // Multiply
             // 
-            this.Multiply.Location = new System.Drawing.Point(147, 103);
+            this.Multiply.Location = new System.Drawing.Point(152, 76);
             this.Multiply.Name = "Multiply";
             this.Multiply.Size = new System.Drawing.Size(39, 32);
             this.Multiply.TabIndex = 13;
@@ -183,7 +185,7 @@
             // 
             // Minus
             // 
-            this.Minus.Location = new System.Drawing.Point(147, 141);
+            this.Minus.Location = new System.Drawing.Point(152, 114);
             this.Minus.Name = "Minus";
             this.Minus.Size = new System.Drawing.Size(39, 32);
             this.Minus.TabIndex = 14;
@@ -192,28 +194,49 @@
             // 
             // Plus
             // 
-            this.Plus.Location = new System.Drawing.Point(147, 179);
+            this.Plus.Location = new System.Drawing.Point(152, 152);
             this.Plus.Name = "Plus";
             this.Plus.Size = new System.Drawing.Size(39, 32);
             this.Plus.TabIndex = 15;
             this.Plus.Text = "+";
             this.Plus.UseVisualStyleBackColor = true;
             // 
-            // Equals
+            // EqualsBtn
             // 
-            this.Equals.Location = new System.Drawing.Point(147, 217);
-            this.Equals.Name = "Equals";
-            this.Equals.Size = new System.Drawing.Size(39, 32);
-            this.Equals.TabIndex = 16;
-            this.Equals.Text = "=";
-            this.Equals.UseVisualStyleBackColor = true;
+            this.EqualsBtn.Location = new System.Drawing.Point(152, 190);
+            this.EqualsBtn.Name = "EqualsBtn";
+            this.EqualsBtn.Size = new System.Drawing.Size(39, 32);
+            this.EqualsBtn.TabIndex = 16;
+            this.EqualsBtn.Text = "=";
+            this.EqualsBtn.UseVisualStyleBackColor = true;
+            // 
+            // Divide
+            // 
+            this.Divide.Location = new System.Drawing.Point(152, 38);
+            this.Divide.Name = "Divide";
+            this.Divide.Size = new System.Drawing.Size(39, 32);
+            this.Divide.TabIndex = 17;
+            this.Divide.Text = "/";
+            this.Divide.UseVisualStyleBackColor = true;
+            // 
+            // Clear
+            // 
+            this.Clear.Location = new System.Drawing.Point(107, 38);
+            this.Clear.Name = "Clear";
+            this.Clear.Size = new System.Drawing.Size(39, 32);
+            this.Clear.TabIndex = 18;
+            this.Clear.Text = "C";
+            this.Clear.UseVisualStyleBackColor = true;
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // CalcUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
-            this.Controls.Add(this.Equals);
+            this.ClientSize = new System.Drawing.Size(204, 234);
+            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.Divide);
+            this.Controls.Add(this.EqualsBtn);
             this.Controls.Add(this.Plus);
             this.Controls.Add(this.Minus);
             this.Controls.Add(this.Multiply);
@@ -255,6 +278,8 @@
         private System.Windows.Forms.Button Multiply;
         private System.Windows.Forms.Button Minus;
         private System.Windows.Forms.Button Plus;
-        private System.Windows.Forms.Button Equals;
+        private System.Windows.Forms.Button EqualsBtn;
+        private System.Windows.Forms.Button Divide;
+        private System.Windows.Forms.Button Clear;
     }
 }

@@ -83,5 +83,11 @@ namespace CalcTest2
             Calc.Result = Convert.ToDouble(Calc.Result.ToString() + "0");
             Result.Text = Calc.ReturnResult().ToString();
         }
+
+        private void Clear_Click(object sender, EventArgs e)
+        {
+            Calc.ClearResult();
+            Result.Text = Calc.ReturnResult().ToString();
+        }
     }
 }
