@@ -73,8 +73,14 @@ namespace CalcTest2
         [TestMethod]
         public void ClearResult()
         {
-            Calc.Result = 67;
+            Calc.Result1 = 67;
             Assert.AreEqual(0, Calc.ClearResult());
+        }
+        [TestMethod]
+        public void ReturnResult()
+        {
+            Calc.Result1 = 56;
+            Assert.AreEqual(56,Calc.ReturnResult());
         }
     }
 }

@@ -2,17 +2,27 @@
 {
     public class Calc
     {
-        public static double Result;
+        public static double Result1;
+        public static double Result2;
+        public static string Operation;
 
+        public static void CopyResult()
+        {
+            Result2 = Result1;
+        }
+        public static void SetOperation(string value)
+        {
+            Calc.Operation = value;
+        }
         public static double ClearResult()
         {
-            return Result = 0;
+            return Result1 = 0;
         }
 
         public static double ReturnResult()
         {
             
-            return Result;
+            return Result1;
         }
 
         public static double Addition(double value1, double value2)
