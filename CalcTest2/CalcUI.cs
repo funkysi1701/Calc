@@ -19,72 +19,70 @@ namespace CalcTest2
 
         private void One_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "1"; }
-            else Result.Text += 1;
+            numberpad(1);
         }
 
         private void Two_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "2"; }
-            else Result.Text += 2;
+            numberpad(2);
         }
 
         private void Three_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "3"; }
-            else Result.Text += 3;
+            numberpad(3);
         }
 
         private void Four_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "4"; }
-            else Result.Text += 4;
+            numberpad(4);
         }
 
         private void Five_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "5"; }
-            else Result.Text += 5;
+            numberpad(5);
         }
 
         private void Six_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "6"; }
-            else Result.Text += 6;
+            numberpad(6);
         }
 
         private void Seven_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "7"; }
-            else Result.Text += 7;
+            numberpad(7);
         }
 
         private void Eight_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "8"; }
-            else Result.Text += 8;
+            numberpad(8);
         }
 
         private void Nine_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "9"; }
-            else Result.Text += 9;
+            numberpad(9);
         }
 
         private void Zero_Click(object sender, EventArgs e)
         {
-            if (Result.Text == "0") { Result.Text = "0"; }
-            else Result.Text += 0;
+            numberpad(0);
+        }
+
+        public void numberpad(int number)
+        {
+            if (Result.Text == "0") { Result.Text = number.ToString(); }
+            else Result.Text += number;
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
+            Point.Enabled = true;
             Calc.Result.Add(Result.Text);
             Result.Text = Calc.ClearResult();
         }
 
         private void Plus_Click(object sender, EventArgs e)
         {
+            Point.Enabled = true;
             Calc.SetOperation("+");
             Calc.Result.Add(Result.Text);
             Result.Text = Calc.ClearResult();
@@ -92,6 +90,7 @@ namespace CalcTest2
 
         private void EqualsBtn_Click(object sender, EventArgs e)
         {
+            Point.Enabled = true;
             Calc.Result.Add(Result.Text);
             Calc.Evaluate(Convert.ToDouble(Calc.Result[Calc.Result.Count - 1]), Convert.ToDouble(Calc.Result[Calc.Result.Count - 2]));
             Result.Text = Calc.ReturnResult();
@@ -99,6 +98,7 @@ namespace CalcTest2
 
         private void Minus_Click(object sender, EventArgs e)
         {
+            Point.Enabled = true;
             Calc.SetOperation("-");
             Calc.Result.Add(Result.Text);
             Result.Text = Calc.ClearResult();
@@ -106,6 +106,7 @@ namespace CalcTest2
 
         private void Multiply_Click(object sender, EventArgs e)
         {
+            Point.Enabled = true;
             Calc.SetOperation("*");
             Calc.Result.Add(Result.Text);
             Result.Text = Calc.ClearResult();
@@ -113,9 +114,21 @@ namespace CalcTest2
 
         private void Divide_Click(object sender, EventArgs e)
         {
+            Point.Enabled = true;
             Calc.SetOperation("/");
             Calc.Result.Add(Result.Text);
             Result.Text = Calc.ClearResult();
+        }
+
+        private void SignChange_Click(object sender, EventArgs e)
+        {
+            Result.Text = Calc.ChangeSign(Convert.ToDouble(Result.Text)).ToString();
+        }
+
+        private void Point_Click(object sender, EventArgs e)
+        {
+            Result.Text += ".";
+            Point.Enabled = false;
         }
     }
 }

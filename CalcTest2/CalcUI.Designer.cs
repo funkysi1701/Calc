@@ -74,6 +74,7 @@
             this.SignChange.TabIndex = 2;
             this.SignChange.Text = "+/-";
             this.SignChange.UseVisualStyleBackColor = true;
+            this.SignChange.Click += new System.EventHandler(this.SignChange_Click);
             // 
             // Point
             // 
@@ -83,6 +84,7 @@
             this.Point.TabIndex = 3;
             this.Point.Text = ".";
             this.Point.UseVisualStyleBackColor = true;
+            this.Point.Click += new System.EventHandler(this.Point_Click);
             // 
             // Two
             // 
