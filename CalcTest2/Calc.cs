@@ -1,28 +1,57 @@
-﻿namespace CalcTest2
+﻿using System.Collections.Generic;
+using System.Collections;
+using System;
+
+namespace CalcTest2
 {
     public class Calc
     {
-        public static double Result1;
-        public static double Result2;
+        
+        public static ArrayList Result;
         public static string Operation;
+        public static string Screen;
 
-        public static void CopyResult()
+        public static void CreateResult()
         {
-            Result2 = Result1;
+            Result = new ArrayList();
         }
+
         public static void SetOperation(string value)
         {
             Calc.Operation = value;
         }
-        public static double ClearResult()
+        public static string ClearResult()
         {
-            return Result1 = 0;
+            return "0";
         }
 
-        public static double ReturnResult()
+        public static void Evaluate(double value1, double value2)
         {
-            
-            return Result1;
+            if (Calc.Operation == "+")
+            {
+
+                Calc.Result.Add(Calc.Addition(value2, value1));
+
+            }
+            if (Calc.Operation == "-")
+            {
+
+                Calc.Result.Add(Calc.Subtraction(value2, value1));
+            }
+            if (Calc.Operation == "*")
+            {
+
+                Calc.Result.Add(Calc.Multiply(value2, value1));
+            }
+            if (Calc.Operation == "/")
+            {
+
+                Calc.Result.Add(Calc.Divide(value2, value1));
+            }
+        }
+        public static string ReturnResult()
+        {
+            return Result[Result.Count - 1].ToString();
         }
 
         public static double Addition(double value1, double value2)

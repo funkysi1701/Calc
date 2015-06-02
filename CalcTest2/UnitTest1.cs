@@ -1,5 +1,8 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Collections;
+
 
 namespace CalcTest2
 {
@@ -73,14 +76,46 @@ namespace CalcTest2
         [TestMethod]
         public void ClearResult()
         {
-            Calc.Result1 = 67;
-            Assert.AreEqual(0, Calc.ClearResult());
+            
+            Assert.AreEqual("0", Calc.ClearResult());
         }
         [TestMethod]
         public void ReturnResult()
         {
-            Calc.Result1 = 56;
-            Assert.AreEqual(56,Calc.ReturnResult());
+            Calc.CreateResult();
+            Calc.Result.Add(56);
+            Assert.AreEqual("56",Calc.ReturnResult());
+        }
+
+        [TestMethod]
+        public void SetOperation()
+        {
+            Calc.SetOperation("+");
+            Assert.AreEqual("+", Calc.Operation);
+            Calc.SetOperation("-");
+            Assert.AreEqual("-", Calc.Operation);
+            Calc.SetOperation("/");
+            Assert.AreEqual("/", Calc.Operation);
+            Calc.SetOperation("*");
+            Assert.AreEqual("*", Calc.Operation);
+        }
+
+        [TestMethod]
+        public void Evaluate()
+        {
+            Calc.CreateResult();
+            Calc.Operation = "+";
+            Calc.Evaluate(12, 56);
+            Assert.AreEqual("68", Calc.ReturnResult());
+            Calc.Operation = "-";
+            Calc.Evaluate(12, 56);
+            Assert.AreEqual("44", Calc.ReturnResult());
+            Calc.Operation = "*";
+            Calc.Evaluate(12, 56);
+            Assert.AreEqual("672", Calc.ReturnResult());
+            Calc.Operation = "/";
+            Calc.Evaluate(3, 9);
+            Assert.AreEqual("3", Calc.ReturnResult());
         }
     }
 }

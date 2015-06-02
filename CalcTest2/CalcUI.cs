@@ -8,8 +8,8 @@ namespace CalcTest2
         public CalcUI()
         {
             InitializeComponent();
-            Calc.ClearResult();
-            Result.Text = Calc.ReturnResult().ToString();
+            Calc.CreateResult();
+            Result.Text = Calc.ClearResult();
         }
         public static void Main()
         {
@@ -19,125 +19,103 @@ namespace CalcTest2
 
         private void One_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "1");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "1"; }
+            else Result.Text += 1;
         }
 
         private void Two_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "2");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "2"; }
+            else Result.Text += 2;
         }
 
         private void Three_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "3");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "3"; }
+            else Result.Text += 3;
         }
 
         private void Four_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "4");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "4"; }
+            else Result.Text += 4;
         }
 
         private void Five_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "5");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "5"; }
+            else Result.Text += 5;
         }
 
         private void Six_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "6");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "6"; }
+            else Result.Text += 6;
         }
 
         private void Seven_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "7");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "7"; }
+            else Result.Text += 7;
         }
 
         private void Eight_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "8");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "8"; }
+            else Result.Text += 8;
         }
 
         private void Nine_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "9");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "9"; }
+            else Result.Text += 9;
         }
 
         private void Zero_Click(object sender, EventArgs e)
         {
-            Calc.Result1 = Convert.ToDouble(Calc.Result1.ToString() + "0");
-            Result.Text = Calc.ReturnResult().ToString();
+            if (Result.Text == "0") { Result.Text = "0"; }
+            else Result.Text += 0;
         }
 
         private void Clear_Click(object sender, EventArgs e)
         {
-            Calc.ClearResult();
-            Result.Text = Calc.ReturnResult().ToString();
+            Calc.Result.Add(Result.Text);
+            Result.Text = Calc.ClearResult();
         }
 
         private void Plus_Click(object sender, EventArgs e)
         {
             Calc.SetOperation("+");
-            Calc.CopyResult();
-            Calc.ClearResult();
+            Calc.Result.Add(Result.Text);
+            Result.Text = Calc.Screen;
         }
 
         private void EqualsBtn_Click(object sender, EventArgs e)
         {
-            if(Calc.Operation == "+")
-            {
-                
-                Calc.Result1 = Calc.Addition(Calc.Result1, Calc.Result2);
-                Result.Text = Calc.ReturnResult().ToString();
-            }
-            if (Calc.Operation == "-")
-            {
-
-                Calc.Result1 = Calc.Subtraction(Calc.Result2, Calc.Result1);
-                Result.Text = Calc.ReturnResult().ToString();
-            }
-            if (Calc.Operation == "*")
-            {
-
-                Calc.Result1 = Calc.Multiply(Calc.Result1, Calc.Result2);
-                Result.Text = Calc.ReturnResult().ToString();
-            }
-            if (Calc.Operation == "/")
-            {
-
-                Calc.Result1 = Calc.Divide(Calc.Result2, Calc.Result1);
-                Result.Text = Calc.ReturnResult().ToString();
-            }
-            
+            Calc.Result.Add(Result.Text);
+            Calc.Evaluate(Convert.ToDouble(Calc.Result[Calc.Result.Count - 1]), Convert.ToDouble(Calc.Result[Calc.Result.Count - 2]));
+            Result.Text = Calc.ReturnResult();
         }
 
         private void Minus_Click(object sender, EventArgs e)
         {
             Calc.SetOperation("-");
-            Calc.CopyResult();
-            Calc.ClearResult();
+            Calc.Result.Add(Result.Text);
+            Result.Text = Calc.Screen;
         }
 
         private void Multiply_Click(object sender, EventArgs e)
         {
             Calc.SetOperation("*");
-            Calc.CopyResult();
-            Calc.ClearResult();
+            Calc.Result.Add(Result.Text);
+            Result.Text = Calc.Screen;
         }
 
         private void Divide_Click(object sender, EventArgs e)
         {
             Calc.SetOperation("/");
-            Calc.CopyResult();
-            Calc.ClearResult();
+            Calc.Result.Add(Result.Text);
+            Result.Text = Calc.Screen;
         }
     }
 }
