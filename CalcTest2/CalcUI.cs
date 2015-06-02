@@ -87,7 +87,7 @@ namespace CalcTest2
         {
             Calc.SetOperation("+");
             Calc.Result.Add(Result.Text);
-            Result.Text = Calc.Screen;
+            Result.Text = Calc.ClearResult();
         }
 
         private void EqualsBtn_Click(object sender, EventArgs e)
@@ -101,21 +101,21 @@ namespace CalcTest2
         {
             Calc.SetOperation("-");
             Calc.Result.Add(Result.Text);
-            Result.Text = Calc.Screen;
+            Result.Text = Calc.ClearResult();
         }
 
         private void Multiply_Click(object sender, EventArgs e)
         {
             Calc.SetOperation("*");
             Calc.Result.Add(Result.Text);
-            Result.Text = Calc.Screen;
+            Result.Text = Calc.ClearResult();
         }
 
         private void Divide_Click(object sender, EventArgs e)
         {
             Calc.SetOperation("/");
             Calc.Result.Add(Result.Text);
-            Result.Text = Calc.Screen;
+            Result.Text = Calc.ClearResult();
         }
     }
 }
